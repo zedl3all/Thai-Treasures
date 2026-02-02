@@ -1,0 +1,23 @@
+{
+  "name": "thai-treasures",
+  "version": "1.0.0",
+  "description": "**Thai Treasures** เป็นโปรเจกต์ Web Design ที่มุ่งเน้นการออกแบบ **User Experience (UX)** และ **User Interface (UI)** เพื่อถ่ายทอดอัตลักษณ์และคุณค่าของวัฒนธรรมไทยในรูปแบบเว็บไซต์ร่วมสมัย โดยโปรเจกต์นี้ไม่ได้เน้นการพัฒนาระบบฝั่ง Backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zedl3all/Thai-Treasures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zedl3all/Thai-Treasures/issues"
+  },
+  "homepage": "https://github.com/zedl3all/Thai-Treasures#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
