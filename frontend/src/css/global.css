@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #181a1b;
+    --secondary-dark: #1e2021;
+    --accent-brown: #79631a;
+    --accent-orange: #d48a67;
+    --accent-gold: #d8b649;
+    --text-light: #e8e6e3;
+    --text-medium: #cdc8c2;
+    --text-light-muted: #b1aaa0;
+    --text-muted: #bdb7ae;
+    --border-dark: #3b4043;
+    --bg-brown: #804224;
+    --bg-brown-light: #974d2a;
+}
+
+body{
+    background-color: var(--secondary-dark);
+    color: var(--text-light-muted);
+}
