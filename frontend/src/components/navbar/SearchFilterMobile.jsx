@@ -7,7 +7,8 @@ function NavbarSearchMobile({
     province,
     onProvinceChange,
     searchTerm,
-    onSearchChange
+    onSearchChange,
+    handleSearchSubmit
 }) {
 
     return (
@@ -25,10 +26,18 @@ function NavbarSearchMobile({
                 province={province}
                 handleProvinceChange={onProvinceChange}
             />
-            <NavbarSearch
-                searchTerm={searchTerm}
-                handleSearchChange={onSearchChange}
-            />
+            
+            <form onSubmit={handleSearchSubmit}
+                style={{
+                    display: 'flex',
+                    width: '100%',
+                }}
+            >
+                <NavbarSearch
+                    searchTerm={searchTerm}
+                    handleSearchChange={onSearchChange}
+                />
+            </form>
 
         </Box>
     );

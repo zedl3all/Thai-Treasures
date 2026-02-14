@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { useCartStore } from '../../middlewares/cartStore';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Components
 import NavbarDrawer from './NavbarDrawer';
@@ -26,12 +26,26 @@ function Navbar() {
     const [showMobileSearch, setShowMobileSearch] = useState(false);
 
     const handleProvinceChange = (event) => {
-        setProvince(event.target.value);
+        const selectedProvince = event.target.value;
+
+        setProvince(selectedProvince);
+
+        if (selectedProvince.trim()) {
+            navigate(`/allproduct?province=${selectedProvince}`);
+        }
     };
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
     };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        const query = searchTerm.trim();
+        if (query) {
+            navigate(`/allproduct?search=${encodeURIComponent(query)}`);
+        }
+    }
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -153,6 +167,7 @@ function Navbar() {
                         handleProvinceChange={handleProvinceChange}
                         searchTerm={searchTerm}
                         handleSearchChange={handleSearchChange}
+                        handleSearchSubmit={handleSearchSubmit}
                     />
 
                     {/* Mobile Search Button */}
@@ -212,6 +227,7 @@ function Navbar() {
                         onProvinceChange={handleProvinceChange}
                         searchTerm={searchTerm}
                         onSearchChange={handleSearchChange}
+                        handleSearchSubmit={handleSearchSubmit}
                     />
                 )}
             </AppBar>

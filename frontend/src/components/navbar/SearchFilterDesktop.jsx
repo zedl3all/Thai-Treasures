@@ -8,7 +8,8 @@ function SearchFilterDesktop({
     province,
     handleProvinceChange,
     searchTerm,
-    handleSearchChange
+    handleSearchChange,
+    handleSearchSubmit
 }) {
     return (
         <Box
@@ -28,11 +29,18 @@ function SearchFilterDesktop({
                 handleProvinceChange={handleProvinceChange}
             />
 
-            {/* Search Input */}
-            <NavbarSearch
-                searchTerm={searchTerm}
-                handleSearchChange={handleSearchChange}
-            />
+            <form onSubmit={handleSearchSubmit}
+                style={{
+                    display: 'flex',
+                    width: '100%',
+                }}
+            >
+                {/* Search Input */}
+                <NavbarSearch
+                    searchTerm={searchTerm}
+                    handleSearchChange={handleSearchChange}
+                />
+            </form>
         </Box>
     );
 }
