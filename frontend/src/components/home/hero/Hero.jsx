@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-import HeroImage from '../../assets/images/hero-image.jpg';
+import HeroImage from '../../../assets/images/hero-image.jpg';
 
 
 function Hero() {

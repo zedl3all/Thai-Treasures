@@ -1,7 +1,8 @@
 
 // Components
 import Navbar from "../components/navbar/Navbar";
-import Hero from "../components/hero/Hero";
+import Hero from "../components/home/hero/Hero";
+import FilterBar from "../components/home/filterbar/FilterBar";
 
 // Assets
 import '../css/global.css';
@@ -11,6 +12,8 @@ function Home() {
         <>
             <Navbar />
             <Hero />
+            <FilterBar />
+
         </>
     );
 }

@@ -1,8 +1,10 @@
 export const PROVINCES = [
-    { value: 'all', label: 'All Provinces' },
-    { value: 'bangkok', label: 'Bangkok' },
-    { value: 'chiang-mai', label: 'Chiang Mai' },
-    { value: 'phuket', label: 'Phuket' },
-    { value: 'ayutthaya', label: 'Ayutthaya' },
-    { value: 'sukhothai', label: 'Sukhothai' },
-]
+    { value: 'All Provinces', label: '🗺️ all' },
+    { value: 'Bangkok', label: '🏛️ bangkok' },
+    { value: 'Chiang Mai', label: '🏔️ chiang-mai' },
+    { value: 'Phuket', label: '🏖️ phuket' },
+    { value: 'Ayutthaya', label: '🏯 ayutthaya' },
+    { value: 'Sukhothai', label: '⛩️ sukhothai' },
+    { value: 'Lopburi', label: '🐒 lopburi' },
+    { value: 'Chonburi', label: '🌊 chonburi' },
+]; 

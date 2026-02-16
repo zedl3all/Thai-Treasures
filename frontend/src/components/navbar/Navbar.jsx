@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { useCartStore } from '../../middlewares/cartStore';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Components
 import NavbarDrawer from './NavbarDrawer';
@@ -20,7 +20,7 @@ import SearchFilterMobile from './SearchFilterMobile';
 function Navbar() {
     const navigate = useNavigate();
     const badgeCount = useCartStore((state) => state.cartCount);
-    const [province, setProvince] = useState('all');
+    const [province, setProvince] = useState('🗺️ all');
     const [searchTerm, setSearchTerm] = useState('');
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMobileSearch, setShowMobileSearch] = useState(false);
