@@ -8,8 +8,6 @@ import Button from '@mui/material/Button'
 import { useState } from "react";
 
 import { PROVINCES } from '../../provinces';
-import { flex } from '@mui/system';
-
 
 function FilterBar() {
     const [active, setActive] = useState(null);
