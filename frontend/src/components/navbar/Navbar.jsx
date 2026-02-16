@@ -17,10 +17,12 @@ import NavbarDrawer from './NavbarDrawer';
 import SearchFilterDesktop from './SearchFilterDesktop';
 import SearchFilterMobile from './SearchFilterMobile';
 
+import { PROVINCES } from '../provinces'
+
 function Navbar() {
     const navigate = useNavigate();
     const badgeCount = useCartStore((state) => state.cartCount);
-    const [province, setProvince] = useState('🗺️ all');
+    const [province, setProvince] = useState(PROVINCES[0]?.value || '');
     const [searchTerm, setSearchTerm] = useState('');
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMobileSearch, setShowMobileSearch] = useState(false);
