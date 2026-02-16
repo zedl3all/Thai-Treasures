@@ -35,7 +35,7 @@ export default function ProductCard({
             <Box sx={{ position: "relative" }}>
                 <CardMedia
                     component="img"
-                    height="360"
+                    height="325"
                     image={image}
                     alt={title}
                 />
