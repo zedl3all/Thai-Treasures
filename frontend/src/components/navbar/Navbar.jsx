@@ -22,7 +22,7 @@ import { PROVINCES } from '../provinces'
 function Navbar() {
     const navigate = useNavigate();
     const badgeCount = useCartStore((state) => state.cartCount);
-    const [province, setProvince] = useState(PROVINCES[0]?.value || '');
+    const [province, setProvince] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMobileSearch, setShowMobileSearch] = useState(false);
@@ -33,7 +33,7 @@ function Navbar() {
         setProvince(selectedProvince);
 
         if (selectedProvince.trim()) {
-            navigate(`/allproduct?province=${selectedProvince}`);
+            navigate(`/allproduct?province=${encodeURIComponent(selectedProvince)}`);
         }
     };
 

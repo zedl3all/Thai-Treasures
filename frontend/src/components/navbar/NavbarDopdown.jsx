@@ -72,6 +72,14 @@ function NavbarDropdown({
                     }
                 }}
             >
+                <MenuItem
+                    key={""}
+                    value={""}
+                    sx={menuItemSx}
+                    disabled
+                >
+                    Select Province
+                </MenuItem>
                 {PROVINCES.map((p) => (
                     <MenuItem
                         key={p.value}
