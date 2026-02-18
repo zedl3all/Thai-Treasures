@@ -12,27 +12,36 @@ import { PROVINCES } from '../../provinces';
 function FilterBar() {
     const [active, setActive] = useState(null);
 
-
     return (
         <Box
             sx={{
                 backgroundColor: '#181A1B',
-                height: '150px',
+                height: { xs: 'auto', sm: '120px', md: '150px' },
+                minHeight: { xs: '100px', sm: '120px', md: '150px' },
+                display: 'flex',
+                alignItems: 'center',
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.08)',
             }}>
-
             <Container
+                maxWidth={false}
                 sx={{
-                    py: '24px',
-                    px: '160px'
+                    py: { xs: 2, sm: 3 },
+                    px: { xs: 1, sm: 3, md: 8, lg: 16 },
                 }}>
                 <Box
                     sx={{
                         display: 'flex',
-                        mb: '16px',
-                        color: '#D48A67'
+                        alignItems: 'center',
+                        mb: { xs: 1, sm: 2 },
+                        color: '#D48A67',
+                        gap: 1,
                     }}>
-                    <LocationOnIcon />
-                    <Typography>
+                    <LocationOnIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
+                    <Typography sx={{
+                        fontWeight: 700,
+                        fontSize: { xs: 16, sm: 18, md: 20 },
+                        letterSpacing: 0.5,
+                    }}>
                         Shop by Province
                     </Typography>
                 </Box>
@@ -41,7 +50,7 @@ function FilterBar() {
                         overflowX: "auto",
                         whiteSpace: "nowrap",
                         scrollBehavior: "smooth",
-                        pb: 2,
+                        pb: 1,
 
                         /* Firefox */
                         scrollbarWidth: "thin",
@@ -64,8 +73,7 @@ function FilterBar() {
                         },
                     }}
                 >
-                    <Stack direction="row" spacing={2}>
-
+                    <Stack direction="row" spacing={{ xs: 1, sm: 2 }}>
                         {PROVINCES.map((p) => (
                             <Button
                                 key={p.value}
@@ -75,13 +83,20 @@ function FilterBar() {
                                     borderColor: active === p.value ? '#974D2A' : '#3B4043',
                                     color: active === p.value ? '#E8E6E3' : '#BDB7AE',
                                     backgroundColor: active === p.value ? '#804224' : '#181A1B',
-                                    backgroundOpacity: '0.1',
                                     borderRadius: '10px',
-                                    px: '25px',
-                                    py: '15px',
+                                    px: { xs: 2, sm: 3 },
+                                    py: { xs: 1, sm: 1.5 },
+                                    fontSize: { xs: 13, sm: 15 },
+                                    fontWeight: 600,
                                     whiteSpace: "nowrap",
                                     minWidth: 'fit-content',
-                                    flexShrink: 0
+                                    boxShadow: active === p.value ? '0 2px 8px 0 rgba(128,66,36,0.12)' : 'none',
+                                    transition: 'all 0.2s',
+                                    '&:hover': {
+                                        backgroundColor: active === p.value ? '#974D2A' : '#262626',
+                                        borderColor: '#974D2A',
+                                        color: '#fff',
+                                    }
                                 }}
                             >
                                 {p.label}
@@ -89,7 +104,6 @@ function FilterBar() {
                         ))}
                     </Stack>
                 </Box>
-
             </Container>
         </Box>
     )

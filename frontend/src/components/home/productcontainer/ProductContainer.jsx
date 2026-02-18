@@ -41,14 +41,19 @@ function ProductContainer() {
     }, [sortBy]);
 
     return (
-        <Box>
-            <Container>
+        <Box sx={{
+            background: "linear-gradient(180deg, #181A1B 80%, #222 100%)",
+            minHeight: "100vh",
+            py: { xs: 2, sm: 4, md: 6 }
+        }}>
+            <Container maxWidth="xl">
                 <Box
                     sx={{
-                        py: 2,
+                        py: { xs: 1, sm: 2 },
                         display: "flex",
                         justifyContent: "space-between",
-                        alignItems: "center",
+                        alignItems: { xs: "flex-start", sm: "center" },
+                        flexDirection: { xs: "column", sm: "row" },
                         flexWrap: "wrap",
                         gap: 2
                     }}
@@ -56,18 +61,22 @@ function ProductContainer() {
                     <Box>
                         <Typography
                             variant="h5"
-                            sx={{ fontWeight: "bold", color: "#FF8A65" }}
+                            sx={{
+                                fontWeight: "bold",
+                                color: "#FF8A65",
+                                fontSize: { xs: 20, sm: 24 }
+                            }}
                         >
                             Featured Products
                         </Typography>
 
-                        <Typography>
+                        <Typography sx={{ color: "#bdb7ae", fontSize: { xs: 14, sm: 16 } }}>
                             {sortedProducts.length} items available
                         </Typography>
                     </Box>
 
                     <FormControl size="small" sx={{
-                        width: { md: '140px', lg: '210px' },
+                        width: { xs: '100%', sm: '160px', md: '210px' },
                         height: '44px',
                         '& .MuiOutlinedInput-root': {
                             backgroundColor: '#181a1b',
@@ -77,7 +86,7 @@ function ProductContainer() {
                             height: '44px',
                             paddingLeft: '8px',
                             fontFamily: 'Arimo, sans-serif',
-                            fontSize: { md: '13px', lg: '14px' },
+                            fontSize: { xs: '13px', md: '14px' },
                             '&:hover fieldset': {
                                 borderColor: '#434343',
                             },
@@ -112,12 +121,12 @@ function ProductContainer() {
                     </FormControl>
                 </Box>
 
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: { xs: 1, sm: 2 } }}>
                     <Grid
                         container
                         spacing={{ xs: 2, sm: 3, md: 4 }}
                         sx={{
-                            justifyContent: 'center',
+                            justifyContent: { xs: 'center', md: 'flex-start' },
                         }}
                     >
                         {sortedProducts.map((p) => (
@@ -128,6 +137,7 @@ function ProductContainer() {
                                 sm={6}
                                 md={4}
                                 lg={3}
+                                xl={2.4}
                                 sx={{
                                     display: "flex",
                                 }}
@@ -135,9 +145,10 @@ function ProductContainer() {
                                 <Box
                                     sx={{
                                         width: "100%",
-                                        transition: "all 0.3s ease",
+                                        transition: "all 0.3s cubic-bezier(.4,2,.6,1)",
                                         "&:hover": {
-                                            transform: "translateY(-6px)",
+                                            transform: "translateY(-8px) scale(1.025)",
+                                            boxShadow: "0 8px 32px 0 rgba(255,138,101,0.12)",
                                         },
                                     }}
                                 >
