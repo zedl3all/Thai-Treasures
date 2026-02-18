@@ -51,12 +51,12 @@ export const PRODUCTS = [
     image: "https://source.unsplash.com/featured/?aroma,candle"
   },
 
-  // Chiang Mai
+  // ChiangMai
   {
     id: 6,
     title: "Traditional Thai Silk Scarf",
     category: "Textiles",
-    province: "Chiang Mai",
+    province: "ChiangMai",
     rating: 4.8,
     reviews: 124,
     price: 1250,
@@ -66,7 +66,7 @@ export const PRODUCTS = [
     id: 7,
     title: "Hill Tribe Silver Bracelet",
     category: "Jewelry",
-    province: "Chiang Mai",
+    province: "ChiangMai",
     rating: 4.7,
     reviews: 73,
     price: 980,
@@ -76,7 +76,7 @@ export const PRODUCTS = [
     id: 8,
     title: "Doi Suthep Coffee Beans",
     category: "Food",
-    province: "Chiang Mai",
+    province: "ChiangMai",
     rating: 4.9,
     reviews: 156,
     price: 450,
@@ -86,7 +86,7 @@ export const PRODUCTS = [
     id: 9,
     title: "Lanna Cotton Shirt",
     category: "Fashion",
-    province: "Chiang Mai",
+    province: "ChiangMai",
     rating: 4.6,
     reviews: 60,
     price: 690,
@@ -96,7 +96,7 @@ export const PRODUCTS = [
     id: 10,
     title: "Handmade Bamboo Lamp",
     category: "Home Decor",
-    province: "Chiang Mai",
+    province: "ChiangMai",
     rating: 4.5,
     reviews: 41,
     price: 1100,
