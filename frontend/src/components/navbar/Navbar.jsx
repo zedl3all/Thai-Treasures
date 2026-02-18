@@ -17,8 +17,6 @@ import NavbarDrawer from './NavbarDrawer';
 import SearchFilterDesktop from './SearchFilterDesktop';
 import SearchFilterMobile from './SearchFilterMobile';
 
-import { PROVINCES } from '../provinces'
-
 function Navbar() {
     const navigate = useNavigate();
     const badgeCount = useCartStore((state) => state.cartCount);
