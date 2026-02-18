@@ -11,16 +11,28 @@ import {
 
 import ProductCard from "../../ProductCard";
 import { PRODUCTS } from "../../product";
+import { useSearchParams } from "react-router-dom";
+
 
 function ProductContainer() {
     const [sortBy, setSortBy] = useState("featured");
+    const [searchParams] = useSearchParams();
+    const province = searchParams.get("province");
+
+    const filteredProducts = useMemo(() => {
+        if (!province || province === "AllProvinces") {
+            return PRODUCTS;
+        }
+
+        return PRODUCTS.filter((p) => p.province === province);
+    }, [province]);
 
     const handleSortChange = (event) => {
         setSortBy(event.target.value);
     };
 
     const sortedProducts = useMemo(() => {
-        const items = [...PRODUCTS];
+        const items = [...filteredProducts];
 
         switch (sortBy) {
             case "priceLow":
@@ -38,7 +50,7 @@ function ProductContainer() {
             default:
                 return items; // featured (default order)
         }
-    }, [sortBy]);
+    }, [sortBy, filteredProducts]);
 
     return (
         <Box sx={{
@@ -67,7 +79,9 @@ function ProductContainer() {
                                 fontSize: { xs: 20, sm: 24 }
                             }}
                         >
-                            Featured Products
+                            {province && province !== "All Provinces"
+                                ? `${province} Products`
+                                : "Featured Products"}
                         </Typography>
 
                         <Typography sx={{ color: "#bdb7ae", fontSize: { xs: 14, sm: 16 } }}>

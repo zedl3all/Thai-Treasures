@@ -4,6 +4,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Stack from "@mui/material/Stack";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
+import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -11,6 +12,7 @@ import { PROVINCES } from '../../provinces';
 
 function FilterBar() {
     const [active, setActive] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -78,7 +80,10 @@ function FilterBar() {
                             <Button
                                 key={p.value}
                                 variant={active === p.value ? "contained" : "outlined"}
-                                onClick={() => setActive(p.value)}
+                                onClick={() => {
+                                    setActive(p.value)
+                                    navigate(`/?province=${encodeURIComponent(p.value)}`);
+                                }}
                                 sx={{
                                     borderColor: active === p.value ? '#974D2A' : '#3B4043',
                                     color: active === p.value ? '#E8E6E3' : '#BDB7AE',
