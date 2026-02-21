@@ -8,7 +8,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 89,
     price: 890,
-    image: "https://source.unsplash.com/featured/?benjarong"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8eqP5tEmPH0k0VmZQVmaQMLy8VoT48EUf0w&s",
+    instock: 18,
+    description: "This authentic Benjarong Ceramic Bowl from Bangkok is carefully handcrafted by local artisans using traditional techniques. Each piece reflects the rich cultural heritage of Thailand and is made with attention to detail. Perfect as a souvenir or gift for someone special.",
+    material: "Fine ceramic with hand-painted enamel",
+    dimensions: "4.5 inches (diameter) x 2.5 inches (height)",
+    weight: "350 g",
+    careInstructions: "Hand wash with mild soap; avoid abrasive materials",
+    origin: "Bangkok",
+    artisan: "Local Artisan Community in Bangkok",
+    culturalStory: "Benjarong is a traditional Thai porcelain with intricate hand-painted designs, originating from the Ayutthaya period. This piece represents Bangkok's artistic traditions and craftsmanship."
   },
   {
     id: 2,
@@ -18,7 +27,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 45,
     price: 1290,
-    image: "https://source.unsplash.com/featured/?bangkok,art"
+    image: "https://cdn02.pinkoi.com/product/qqrruauk/7/640x530.jpg",
+    instock: 12,
+    description: "This vibrant Bangkok Street Art Canvas captures the energy and creativity of the city's urban art scene. Hand-printed by local artists, each piece showcases unique graffiti and mural culture. A perfect addition to modern home decor.",
+    material: "High-quality canvas with archival ink",
+    dimensions: "16 x 20 inches (standard size)",
+    weight: "800 g",
+    careInstructions: "Wipe gently with a dry cloth; keep away from direct sunlight",
+    origin: "Bangkok",
+    artisan: "Bangkok Street Art Collective",
+    culturalStory: "Bangkok's street art scene has evolved from underground graffiti to a respected art form, with murals reflecting social commentary and Thai pop culture."
   },
   {
     id: 3,
@@ -28,7 +46,16 @@ export const PRODUCTS = [
     rating: 4.8,
     reviews: 112,
     price: 590,
-    image: "https://source.unsplash.com/featured/?thai,dessert"
+    image: "https://www.orientpack.com/storage/media/news/other-news/003-1.jpg",
+    instock: 25,
+    description: "Indulge in the sweet flavors of Thailand with this Thai Dessert Gift Box. Featuring an assortment of traditional treats like mango sticky rice, coconut jelly, and durian chips, all prepared using authentic recipes. Ideal for sharing or as a delightful gift.",
+    material: "Assorted Thai desserts (see packaging for ingredients)",
+    dimensions: "Gift box: 10 x 8 x 3 inches",
+    weight: "600 g",
+    careInstructions: "Store in a cool, dry place; consume within 7 days of opening",
+    origin: "Bangkok",
+    artisan: "Bangkok's Old Town Dessert Makers",
+    culturalStory: "Thai desserts often balance sweet, salty, and creamy flavors, reflecting the kingdom's love for harmony. Many recipes date back centuries and are still made by hand in small family shops."
   },
   {
     id: 4,
@@ -38,7 +65,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 67,
     price: 750,
-    image: "https://source.unsplash.com/featured/?handmade,bag"
+    image: "https://www.shutterstock.com/image-photo/handicraft-weave-handbag-selling-chatuchak-600nw-1592901643.jpg",
+    instock: 10,
+    description: "This Chatuchak Handmade Bag is woven by skilled artisans using traditional techniques. Made from natural fibers, it features a unique pattern inspired by Thai textiles. Lightweight and durable, it's perfect for everyday use or a day at the market.",
+    material: "Natural water hyacinth and cotton",
+    dimensions: "12 x 10 x 4 inches (shoulder strap adjustable)",
+    weight: "400 g",
+    careInstructions: "Spot clean with damp cloth; avoid overloading to maintain shape",
+    origin: "Bangkok",
+    artisan: "Chatuchak Artisan Cooperative",
+    culturalStory: "Handwoven bags from Chatuchak Market are a symbol of sustainable Thai craftsmanship, using locally sourced plants and employing traditional weaving methods passed down through generations."
   },
   {
     id: 5,
@@ -48,10 +84,19 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 38,
     price: 420,
-    image: "https://source.unsplash.com/featured/?aroma,candle"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr9pmROpXHHFdHLO-40yWrsa0-VTmUpVDy_A&s",
+    instock: 22,
+    description: "Fill your space with the soothing scents of Thailand with this Bangkok Aroma Candle. Infused with essential oils like lemongrass, jasmine, and tamarind, it creates a calming atmosphere reminiscent of a Thai spa. Hand-poured in small batches.",
+    material: "Soy wax blend with cotton wick",
+    dimensions: "3.5 inches (diameter) x 4 inches (height)",
+    weight: "300 g",
+    careInstructions: "Burn for 2-3 hours at a time to ensure even melting; trim wick to ¼ inch before each use",
+    origin: "Bangkok",
+    artisan: "Bangkok Aroma Artisans",
+    culturalStory: "Aromatherapy is deeply rooted in Thai wellness traditions, with herbs and flowers used for centuries in healing practices. This candle brings that heritage into your home."
   },
 
-  // ChiangMai
+  // Chiang Mai
   {
     id: 6,
     title: "Traditional Thai Silk Scarf",
@@ -60,7 +105,16 @@ export const PRODUCTS = [
     rating: 4.8,
     reviews: 124,
     price: 1250,
-    image: "https://source.unsplash.com/featured/?thai,silk"
+    image: "https://xa6zemg4r8.cloudimg.io/_images_/g/Weaving%20Golden%20Silk%20Cambodia%20R-Gp3DJLdbhMmZ76gn2CdA.webp",
+    instock: 15,
+    description: "Luxuriously soft and vibrant, this Traditional Thai Silk Scarf is handwoven by artisans in Chiang Mai using centuries-old techniques. The intricate patterns and rich colors reflect the Lanna culture. A timeless accessory for any wardrobe.",
+    material: "100% Thai silk",
+    dimensions: "70 x 20 inches (including fringe)",
+    weight: "150 g",
+    careInstructions: "Dry clean only; avoid direct sunlight to preserve color",
+    origin: "Chiang Mai",
+    artisan: "Lanna Silk Weaving Group",
+    culturalStory: "Thai silk is renowned worldwide, and Chiang Mai is the heart of silk production in northern Thailand. The weaving process involves hand-dyeing and intricate patterns that tell stories of the Lanna kingdom."
   },
   {
     id: 7,
@@ -70,7 +124,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 73,
     price: 980,
-    image: "https://source.unsplash.com/featured/?silver,bracelet"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL3ZZzIXF1JZWxbRIqBI8xufCKc64HVeNqOQ&s",
+    instock: 8,
+    description: "This Hill Tribe Silver Bracelet is meticulously crafted by Karen artisans using traditional silversmithing methods. The intricate designs feature symbols of protection and prosperity. Each piece is unique and ethically made.",
+    material: "Sterling silver (95% pure)",
+    dimensions: "Adjustable to fit most wrists (approx. 6-7 inches)",
+    weight: "25 g",
+    careInstructions: "Polish with a soft cloth; avoid contact with chemicals",
+    origin: "Chiang Mai",
+    artisan: "Karen Hill Tribe Silversmiths",
+    culturalStory: "The hill tribes of northern Thailand have practiced silversmithing for generations, creating jewelry that reflects their beliefs and connection to nature."
   },
   {
     id: 8,
@@ -80,7 +143,16 @@ export const PRODUCTS = [
     rating: 4.9,
     reviews: 156,
     price: 450,
-    image: "https://source.unsplash.com/featured/?coffee,beans"
+    image: "https://i0.wp.com/coffeeculture.asia/wp-content/uploads/2021/02/Organic-Doi-Mod-Hill-Tribe-Arabica-Coffee-Thailand-Coffee-Culture-Thailand.jpg?fit=2200%2C2200&ssl=1",
+    instock: 30,
+    description: "Experience the rich, smooth flavor of Doi Suthep Coffee Beans, grown in the highlands of Chiang Mai. These Arabica beans are shade-grown and hand-picked by local farmers, then roasted to perfection. A true taste of northern Thailand.",
+    material: "100% Arabica coffee beans",
+    dimensions: "250g bag",
+    weight: "250 g",
+    careInstructions: "Store in an airtight container in a cool, dark place; grind just before brewing",
+    origin: "Chiang Mai",
+    artisan: "Doi Suthep Coffee Cooperative",
+    culturalStory: "Coffee cultivation in Chiang Mai's mountains was introduced as an alternative crop to opium poppies, helping local communities thrive sustainably."
   },
   {
     id: 9,
@@ -90,7 +162,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 60,
     price: 690,
-    image: "https://source.unsplash.com/featured/?cotton,shirt"
+    image: "https://140393256.cdn6.editmysite.com/uploads/1/4/0/3/140393256/US3J3CGVC4GILBXNTJM2EZCH.jpeg",
+    instock: 14,
+    description: "Stay cool and stylish with this Lanna Cotton Shirt, handwoven from organic cotton. The traditional patterns and breathable fabric make it perfect for tropical climates. Each shirt is individually crafted, so slight variations add to its charm.",
+    material: "100% organic cotton",
+    dimensions: "Available in S, M, L, XL (see size chart)",
+    weight: "200 g",
+    careInstructions: "Machine wash cold on gentle cycle; hang to dry",
+    origin: "Chiang Mai",
+    artisan: "Lanna Textile Artisans",
+    culturalStory: "Lanna cotton weaving is an ancient art, with patterns inspired by nature and Buddhist symbolism. Wearing this shirt connects you to the rich heritage of northern Thailand."
   },
   {
     id: 10,
@@ -100,7 +181,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 41,
     price: 1100,
-    image: "https://source.unsplash.com/featured/?bamboo,lamp"
+    image: "https://m.media-amazon.com/images/I/81IssXAyUML._AC_UF1000,1000_QL80_.jpg",
+    instock: 6,
+    description: "Illuminate your space with the warm glow of this Handmade Bamboo Lamp. Crafted by skilled artisans in Chiang Mai, it features intricate bamboo weaving that casts beautiful shadows. Eco-friendly and unique.",
+    material: "Sustainably harvested bamboo",
+    dimensions: "12 inches (height) x 8 inches (diameter)",
+    weight: "500 g",
+    careInstructions: "Wipe with a dry cloth; use LED bulb to avoid heat damage",
+    origin: "Chiang Mai",
+    artisan: "Bamboo Craft Cooperative",
+    culturalStory: "Bamboo weaving is a traditional craft in northern Thailand, used for everything from baskets to houses. This lamp showcases the versatility and beauty of bamboo."
   },
 
   // Phuket
@@ -112,7 +202,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 76,
     price: 1590,
-    image: "https://source.unsplash.com/featured/?pearl,necklace"
+    image: "https://rootssea.com/cdn/shop/files/image_ac81afdc-eca1-4325-acf0-45dcfd2fd96f_1024x1024@2x.jpg?v=1686414916",
+    instock: 9,
+    description: "Elegant and timeless, this Pearl Shell Necklace features natural pearls harvested from the Andaman Sea. Each pearl is hand-selected and paired with a delicate silver chain. A perfect keepsake from Phuket.",
+    material: "Natural pearls, sterling silver",
+    dimensions: "18 inches chain length with 2-inch extender",
+    weight: "20 g",
+    careInstructions: "Avoid water and perfume; wipe with a soft cloth after wearing",
+    origin: "Phuket",
+    artisan: "Phuket Pearl Farmers",
+    culturalStory: "Pearl farming in Phuket has a long history, with the warm Andaman waters producing lustrous gems. This necklace celebrates the island's maritime heritage."
   },
   {
     id: 12,
@@ -122,7 +221,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 39,
     price: 390,
-    image: "https://source.unsplash.com/featured/?beach,hat"
+    image: "https://i.etsystatic.com/19688789/r/il/a04985/5917638098/il_fullxfull.5917638098_gh9i.jpg",
+    instock: 20,
+    description: "Stay shaded in style with this Phuket Beach Hat. Woven from local palm leaves, it's lightweight and breathable, perfect for a day at the beach. The adjustable strap ensures a comfortable fit.",
+    material: "Palm leaves, cotton strap",
+    dimensions: "One size fits most (brim width 4 inches)",
+    weight: "150 g",
+    careInstructions: "Spot clean; reshape when wet and air dry",
+    origin: "Phuket",
+    artisan: "Phuket Coastal Artisans",
+    culturalStory: "Hat weaving is a traditional craft in coastal communities, using natural materials to create practical and beautiful accessories for island life."
   },
   {
     id: 13,
@@ -132,7 +240,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 84,
     price: 520,
-    image: "https://source.unsplash.com/featured/?handmade,soap"
+    image: "https://lzd-u.slatic.net/53e825d621c94d099ec1ef0ab19f38c7_18_1764903345.211091.jpg",
+    instock: 17,
+    description: "Pamper yourself with the Andaman Sea Soap Set, featuring handmade soaps infused with sea salt, seaweed, and essential oils. Each bar is cold-processed to retain natural goodness. The set includes four scents inspired by the ocean.",
+    material: "Natural oils, sea salt, seaweed, essential oils",
+    dimensions: "Each bar approx. 3.5 oz (set of 4)",
+    weight: "400 g (total)",
+    careInstructions: "Keep in a dry place between uses; for external use only",
+    origin: "Phuket",
+    artisan: "Phuket Herbal Spa Cooperative",
+    culturalStory: "Thailand's spa traditions draw from the sea and the land, using local ingredients for healing and relaxation. This set embodies the essence of Andaman wellness."
   },
   {
     id: 14,
@@ -142,7 +259,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 52,
     price: 890,
-    image: "https://source.unsplash.com/featured/?batik,shirt"
+    image: "https://www.phuketemagazine.com/wp-content/uploads/2019/08/XT1C2995.jpg",
+    instock: 11,
+    description: "Add a splash of color to your wardrobe with this Phuket Batik Shirt. Hand-painted using traditional wax-resist dyeing, each shirt features motifs of marine life and tropical flowers. Lightweight and comfortable.",
+    material: "100% cotton",
+    dimensions: "Available in S, M, L, XL",
+    weight: "250 g",
+    careInstructions: "Hand wash cold; hang to dry; iron on reverse side",
+    origin: "Phuket",
+    artisan: "Phuket Batik Studio",
+    culturalStory: "Batik is an ancient art form that traveled to Thailand from Indonesia, and Phuket artists have developed their own style inspired by the island's natural beauty."
   },
   {
     id: 15,
@@ -152,7 +278,16 @@ export const PRODUCTS = [
     rating: 4.4,
     reviews: 27,
     price: 650,
-    image: "https://source.unsplash.com/featured/?sea,shell,decor"
+    image: "https://images.squarespace-cdn.com/content/v1/52f55c20e4b0c5c8957f6aa1/1646605201620-7HWR1GYN144OGDPG5XPT/fullsizeoutput_58.jpeg?format=1000w",
+    instock: 5,
+    description: "Bring the beach home with this Sea Shell Frame Decor. A beautiful arrangement of natural shells from Phuket's shores, artistically mounted in a wooden shadow box. Each piece is unique.",
+    material: "Natural seashells, reclaimed wood frame",
+    dimensions: "8 x 10 inches",
+    weight: "600 g",
+    careInstructions: "Dust gently; keep away from humidity",
+    origin: "Phuket",
+    artisan: "Phuket Coastal Art",
+    culturalStory: "Shell collecting and crafting is a beloved pastime in Phuket, turning the ocean's treasures into lasting memories of island life."
   },
 
   // Ayutthaya
@@ -164,7 +299,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 54,
     price: 650,
-    image: "https://source.unsplash.com/featured/?clay,pot"
+    image: "https://media.istockphoto.com/id/1306281814/photo/ancient-clay-pots-in-the-ayutthaya-period-have-beautiful-patterns.jpg?s=170667a&w=0&k=20&c=fw4VAtAXO5lTmRfjkxLzZ4oAywehCWLNsD67nFS-w0I=",
+    instock: 13,
+    description: "This Ayutthaya Clay Pot is hand-thrown by potters using clay from the Chao Phraya River basin. The simple, elegant design is perfect for cooking or as a decorative piece. Each pot is fired in a traditional wood kiln.",
+    material: "Natural clay",
+    dimensions: "6 inches (diameter) x 5 inches (height)",
+    weight: "1.2 kg",
+    careInstructions: "Season before first use; hand wash; not for microwave",
+    origin: "Ayutthaya",
+    artisan: "Ayutthaya Pottery Village",
+    culturalStory: "Ayutthaya was once a global trading hub, and its pottery was highly prized. Today, artisans continue the legacy, making clay pots that are both functional and artistic."
   },
   {
     id: 17,
@@ -174,7 +318,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 33,
     price: 790,
-    image: "https://source.unsplash.com/featured/?temple,miniature"
+    image: "https://krafteria.com/cdn/shop/files/489.jpg?v=1766416787",
+    instock: 7,
+    description: "A detailed miniature replica of Ayutthaya's iconic temple ruins. Hand-carved from resin and hand-painted, it captures the grandeur of the ancient capital. A meaningful souvenir for history lovers.",
+    material: "Resin, hand-painted",
+    dimensions: "4 x 4 x 6 inches",
+    weight: "400 g",
+    careInstructions: "Dust with soft brush; avoid direct sunlight",
+    origin: "Ayutthaya",
+    artisan: "Ayutthaya Heritage Crafts",
+    culturalStory: "Ayutthaya was one of the world's largest cities in the 1700s, and its temple ruins are now a UNESCO World Heritage Site. This miniature honors that legacy."
   },
   {
     id: 18,
@@ -184,7 +337,16 @@ export const PRODUCTS = [
     rating: 4.8,
     reviews: 91,
     price: 320,
-    image: "https://source.unsplash.com/featured/?herbal,compress"
+    image: "https://www.makkhahealthandspa.com/wp-content/uploads/2025/10/shutterstock_1980163640.jpg",
+    instock: 24,
+    description: "Relax and rejuvenate with this Thai Herbal Compress Ball. Filled with traditional herbs like lemongrass, turmeric, and kaffir lime, it's steamed and applied to soothe muscles and refresh the senses. A staple of Thai wellness.",
+    material: "Cotton cloth, dried herbs",
+    dimensions: "Approx. 5 inches in diameter",
+    weight: "150 g",
+    careInstructions: "Steam for 10-15 minutes before use; store in freezer between uses",
+    origin: "Ayutthaya",
+    artisan: "Ayutthaya Herbal Cooperative",
+    culturalStory: "Herbal compress therapy has been used in Thai traditional medicine for centuries, combining the healing properties of herbs with therapeutic heat."
   },
   {
     id: 19,
@@ -194,7 +356,16 @@ export const PRODUCTS = [
     rating: 4.4,
     reviews: 22,
     price: 1400,
-    image: "https://source.unsplash.com/featured/?river,painting"
+    image: "https://www.shutterstock.com/image-illustration/landscape-bang-pa-palace-thailand-600nw-2405680459.jpg",
+    instock: 4,
+    description: "This serene Ayutthaya River Painting captures the beauty of the Chao Phraya as it flows past ancient temples. Painted by a local artist using watercolors on handmade paper, it evokes the tranquility of the historic city.",
+    material: "Watercolor on handmade paper",
+    dimensions: "12 x 16 inches (framed)",
+    weight: "1 kg",
+    careInstructions: "Keep out of direct sunlight; handle with care",
+    origin: "Ayutthaya",
+    artisan: "Ayutthaya Art Community",
+    culturalStory: "The riverside of Ayutthaya has inspired artists for centuries, with its reflections of temple spires and passing boats symbolizing the flow of time."
   },
   {
     id: 20,
@@ -204,8 +375,18 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 29,
     price: 250,
-    image: "https://source.unsplash.com/featured/?thai,headband"
+    image: "https://grantmma.ca/wp-content/uploads/2019/03/mongkol.jpg",
+    instock: 19,
+    description: "Add a touch of Thai elegance with this Traditional Headband. Handwoven from cotton and silk threads, it features a classic pattern inspired by Ayutthaya-era textiles. Adjustable and comfortable.",
+    material: "Cotton and silk blend",
+    dimensions: "Adjustable (fits most head sizes)",
+    weight: "50 g",
+    careInstructions: "Hand wash gently; air dry",
+    origin: "Ayutthaya",
+    artisan: "Ayutthaya Weaving Group",
+    culturalStory: "Headbands and hair accessories have been part of Thai attire for centuries, often indicating status and region. This design pays homage to the Ayutthaya period."
   },
+
   // Sukhothai
   {
     id: 21,
@@ -215,7 +396,16 @@ export const PRODUCTS = [
     rating: 4.9,
     reviews: 210,
     price: 1990,
-    image: "https://source.unsplash.com/featured/?thai,amulet"
+    image: "https://www.thailandee.com/img/villes/sukhothai/sukhothai-buddha-amulets-making.jpg",
+    instock: 3,
+    description: "A sacred Sukhothai Buddha Amulet, crafted by monks and blessed in ancient temples. Made from powdered herbs and clay, it is believed to bring protection and good fortune. Each amulet is unique and comes with a certificate.",
+    material: "Herbal powder, clay, gold leaf",
+    dimensions: "1.5 x 1 inches",
+    weight: "10 g",
+    careInstructions: "Keep in a high place; avoid getting wet; wear with respect",
+    origin: "Sukhothai",
+    artisan: "Sukhothai Temple Artisans",
+    culturalStory: "Amulet making in Sukhothai dates back to the 13th century, when the kingdom was the cradle of Thai civilization. These amulets are deeply revered."
   },
   {
     id: 22,
@@ -225,7 +415,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 88,
     price: 1250,
-    image: "https://source.unsplash.com/featured/?ceramic,plate"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKrga-0_ffz7vCDB_qNuUL9Tf9j65hQTN_EQ&s",
+    instock: 12,
+    description: "This Sangkhalok Ceramic Plate is a replica of ancient Sukhothai pottery, known for its celadon glaze and underglaze decorations. Hand-thrown and fired in a wood kiln, it embodies the elegance of early Thai ceramics.",
+    material: "Stoneware with celadon glaze",
+    dimensions: "8 inches diameter",
+    weight: "800 g",
+    careInstructions: "Hand wash; not for microwave; display as art or use for dry foods",
+    origin: "Sukhothai",
+    artisan: "Sukhothai Celadon Workshop",
+    culturalStory: "Sangkhalok ware was exported throughout Southeast Asia during the Sukhothai period, and its distinctive green glaze remains a symbol of Thai craftsmanship."
   },
   {
     id: 23,
@@ -235,7 +434,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 41,
     price: 1650,
-    image: "https://source.unsplash.com/featured/?thai,history,painting"
+    image: "https://www.mediastorehouse.com.au/image/629/11985624/11985624_600_600_85756_1671_fill_0_6d28b506960951e5bdccac540c2d51da.jpg.webp",
+    instock: 6,
+    description: "This Sukhothai Historical Painting depicts scenes from the golden age of the first Thai capital. Painted in a traditional style on canvas, it showcases King Ramkhamhaeng and daily life in the ancient city.",
+    material: "Acrylic on canvas",
+    dimensions: "18 x 24 inches",
+    weight: "1.5 kg",
+    careInstructions: "Dust lightly; avoid moisture",
+    origin: "Sukhothai",
+    artisan: "Sukhothai Historical Artists",
+    culturalStory: "Sukhothai is considered the birthplace of Thai art and culture, with its iconic Buddha images and stone inscriptions. This painting brings that history to life."
   },
   {
     id: 24,
@@ -245,7 +453,16 @@ export const PRODUCTS = [
     rating: 4.8,
     reviews: 73,
     price: 520,
-    image: "https://source.unsplash.com/featured/?thai,herbal,spa"
+    image: "https://www.thailandnow.in.th/wp-content/uploads/2021/10/Natural-products.jpg.webp",
+    instock: 16,
+    description: "Pamper yourself with this Thai Herbal Spa Set, including herbal compress balls, aromatic oils, and natural salt scrub. All ingredients are sourced from the Sukhothai region and prepared using traditional recipes.",
+    material: "Herbs, essential oils, sea salt",
+    dimensions: "Gift box: 10 x 8 x 2 inches",
+    weight: "700 g",
+    careInstructions: "Store in a cool, dry place; follow individual product instructions",
+    origin: "Sukhothai",
+    artisan: "Sukhothai Herbal Wisdom Group",
+    culturalStory: "Sukhothai's fertile plains have long provided herbs for traditional medicine, and this set carries on the healing traditions of the ancient kingdom."
   },
   {
     id: 25,
@@ -255,7 +472,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 35,
     price: 490,
-    image: "https://source.unsplash.com/featured/?thai,cotton,pants"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8w5mHScgz-hzKyMlMc-BVzPKu2m-PbnlhIg&s",
+    instock: 21,
+    description: "Comfortable and stylish, these Traditional Thai Cotton Pants are handwoven by artisans in Sukhothai. The elastic waistband and relaxed fit make them perfect for lounging or yoga. Available in several earthy tones.",
+    material: "100% handwoven cotton",
+    dimensions: "One size fits most (waist up to 42 inches)",
+    weight: "300 g",
+    careInstructions: "Machine wash gentle; tumble dry low",
+    origin: "Sukhothai",
+    artisan: "Sukhothai Cotton Weavers",
+    culturalStory: "Cotton weaving in Sukhothai has been practiced for centuries, with patterns inspired by nature and temple art. These pants are a modern take on traditional attire."
   },
 
   // Lopburi
@@ -267,7 +493,16 @@ export const PRODUCTS = [
     rating: 4.4,
     reviews: 32,
     price: 390,
-    image: "https://source.unsplash.com/featured/?monkey,tshirt"
+    image: "https://i.etsystatic.com/12662000/r/il/cc217c/5509197756/il_fullxfull.5509197756_f7x1.jpg",
+    instock: 18,
+    description: "Show your love for Lopburi's famous monkeys with this fun T-shirt. Featuring a playful monkey design printed on soft cotton, it's a lighthearted souvenir from the city known for its monkey temples.",
+    material: "100% cotton",
+    dimensions: "Available in S, M, L, XL",
+    weight: "200 g",
+    careInstructions: "Machine wash cold; tumble dry low",
+    origin: "Lopburi",
+    artisan: "Lopburi Local Designers",
+    culturalStory: "Lopburi is famous for its troops of monkeys that roam ancient ruins, and they have become a beloved symbol of the city's quirky charm."
   },
   {
     id: 27,
@@ -277,7 +512,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 48,
     price: 190,
-    image: "https://source.unsplash.com/featured/?sunflower,postcard"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iKfLUtKU1bxdLPGT00x7Oy8D01eC6PpOEw&s",
+    instock: 30,
+    description: "Capture the beauty of Lopburi's sunflower fields with this set of 10 postcards. Each card features a stunning photograph taken during the annual sunflower bloom, a spectacular sight that attracts visitors from all over.",
+    material: "High-quality photo paper",
+    dimensions: "4 x 6 inches each",
+    weight: "150 g",
+    careInstructions: "Keep dry; store in a cool place",
+    origin: "Lopburi",
+    artisan: "Lopburi Photography Club",
+    culturalStory: "Every year, Lopburi's fields burst into golden sunflowers, symbolizing happiness and prosperity. The postcards capture this fleeting beauty."
   },
   {
     id: 28,
@@ -287,7 +531,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 26,
     price: 780,
-    image: "https://source.unsplash.com/featured/?clay,sculpture"
+    image: "https://thumbs.dreamstime.com/b/lopburi-thailand-november-community-ban-din-mot-daeng-market-clay-statues-children-playing-thai-musical-instruments-163740889.jpg",
+    instock: 5,
+    description: "This Lopburi Clay Sculpture depicts a playful monkey, hand-sculpted by local artists using clay from the region. Each piece is unique, with expressive details that capture the mischievous nature of Lopburi's monkeys.",
+    material: "Natural clay, fired and painted",
+    dimensions: "5 x 4 x 6 inches",
+    weight: "800 g",
+    careInstructions: "Dust gently; handle with care; avoid water",
+    origin: "Lopburi",
+    artisan: "Lopburi Clay Art Studio",
+    culturalStory: "Lopburi's monkeys are considered sacred by many, and they have inspired local artisans for generations, appearing in sculptures and paintings."
   },
   {
     id: 29,
@@ -297,7 +550,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 64,
     price: 120,
-    image: "https://source.unsplash.com/featured/?monkey,keychain"
+    image: "https://ae01.alicdn.com/kf/Hb08d7b531bfc4838af35031a742dd372k.jpg",
+    instock: 25,
+    description: "A cute and affordable Monkey Keychain Souvenir, made from polished wood and hand-painted. It's a small reminder of your visit to Lopburi and its cheeky monkey residents.",
+    material: "Wood, metal ring",
+    dimensions: "2 inches tall",
+    weight: "20 g",
+    careInstructions: "Wipe with a dry cloth",
+    origin: "Lopburi",
+    artisan: "Lopburi Handicraft Group",
+    culturalStory: "Keychains featuring monkeys are a popular souvenir, symbolizing the playful spirit of Lopburi and its famous macaques."
   },
   {
     id: 30,
@@ -307,7 +569,16 @@ export const PRODUCTS = [
     rating: 4.8,
     reviews: 92,
     price: 150,
-    image: "https://source.unsplash.com/featured/?herbal,balm"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ42Kpd0M8vo8FDL-rWd0dcocOdCNJAS4K6Bg&s",
+    instock: 22,
+    description: "This Thai Herbal Balm is a traditional remedy made from a blend of herbs including camphor, menthol, and eucalyptus. Perfect for relieving headaches, muscle aches, and insect bites. A small tin that packs a punch.",
+    material: "Natural herbal ingredients, beeswax",
+    dimensions: "1.5 oz tin",
+    weight: "50 g",
+    careInstructions: "For external use only; avoid contact with eyes",
+    origin: "Lopburi",
+    artisan: "Lopburi Herbal Cooperative",
+    culturalStory: "Herbal balms have been used in Thai households for generations, offering natural relief for common ailments. This recipe is passed down through families."
   },
 
   // Chonburi
@@ -319,7 +590,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 58,
     price: 720,
-    image: "https://source.unsplash.com/featured/?sea,salt,spa"
+    image: "https://images-na.ssl-images-amazon.com/images/I/71TDOLK+GzL._UL500_.jpg",
+    instock: 14,
+    description: "Indulge in a spa-like experience with the Chonburi Sea Salt Spa Set. Includes natural sea salt from the Gulf of Thailand, mixed with essential oils for a rejuvenating scrub. Also includes a salt soak and a wooden scoop.",
+    material: "Sea salt, essential oils, glass jar",
+    dimensions: "Set includes 300g salt scrub, 200g bath salt",
+    weight: "600 g",
+    careInstructions: "Store in a cool, dry place; use within 6 months of opening",
+    origin: "Chonburi",
+    artisan: "Chonburi Sea Salt Artisans",
+    culturalStory: "Sea salt harvesting in Chonburi dates back centuries, using solar evaporation ponds along the coast. This set brings the healing power of the sea into your home."
   },
   {
     id: 32,
@@ -329,7 +609,16 @@ export const PRODUCTS = [
     rating: 4.5,
     reviews: 43,
     price: 450,
-    image: "https://source.unsplash.com/featured/?beach,tote"
+    image: "https://down-th.img.susercontent.com/file/th-11134207-7rash-m9cyyqupp8ps96",
+    instock: 17,
+    description: "Head to the beach with this stylish Pattaya Beach Tote Bag. Made from durable canvas, it features a colorful print of Pattaya's skyline and palm trees. Roomy enough for all your beach essentials.",
+    material: "Canvas cotton",
+    dimensions: "18 x 14 x 6 inches",
+    weight: "300 g",
+    careInstructions: "Spot clean; machine wash gentle if needed",
+    origin: "Chonburi",
+    artisan: "Pattaya Artisan Market",
+    culturalStory: "Pattaya is Thailand's most famous beach resort, and this tote captures the fun and sun of this vibrant city."
   },
   {
     id: 33,
@@ -339,7 +628,16 @@ export const PRODUCTS = [
     rating: 4.7,
     reviews: 81,
     price: 890,
-    image: "https://source.unsplash.com/featured/?dried,seafood"
+    image: "https://wooltariusa.com/cdn/shop/files/11t_3d36442b-d792-425c-aae2-bae7c9beabc6.jpg?v=1764113611&width=1000",
+    instock: 11,
+    description: "Savor the flavors of the sea with this Bangsaen Dried Seafood Set. Includes dried squid, shrimp, and fish, all locally caught and sun-dried using traditional methods. Perfect as a snack or ingredient.",
+    material: "Dried seafood (squid, shrimp, fish)",
+    dimensions: "Gift box: 12 x 8 x 2 inches",
+    weight: "500 g",
+    careInstructions: "Store in a cool, dry place; refrigerate after opening",
+    origin: "Chonburi",
+    artisan: "Bangsaen Fisherfolk Cooperative",
+    culturalStory: "Dried seafood is a staple in Thai cuisine, and Bangsaen's fishermen have perfected the art of sun-drying to preserve the catch for months."
   },
   {
     id: 34,
@@ -349,7 +647,16 @@ export const PRODUCTS = [
     rating: 4.6,
     reviews: 37,
     price: 1350,
-    image: "https://source.unsplash.com/featured/?coral,reef,art"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB_Y6LteFMwx0FJ9O2O2Q-Vt0KuEOUc830Eg&s",
+    instock: 4,
+    description: "Bring the underwater world into your home with this Coral Reef Wall Art. A hand-painted canvas depicting vibrant coral and tropical fish found off the coast of Chonburi. A stunning piece for any room.",
+    material: "Acrylic on canvas, stretched",
+    dimensions: "24 x 16 inches",
+    weight: "1.2 kg",
+    careInstructions: "Dust gently; keep away from direct sunlight",
+    origin: "Chonburi",
+    artisan: "Chonburi Marine Artists",
+    culturalStory: "The coral reefs of Chonburi are home to incredible biodiversity, and this art celebrates the beauty of these underwater ecosystems."
   },
   {
     id: 35,
@@ -359,6 +666,15 @@ export const PRODUCTS = [
     rating: 4.4,
     reviews: 29,
     price: 320,
-    image: "https://source.unsplash.com/featured/?shell,bracelet"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFHExU_8dZUQjHEzVpGWvvQOh5kKzfPLmeAw&s",
+    instock: 13,
+    description: "A delicate Shell Bracelet Handmade by coastal artisans in Chonburi. Small, naturally colorful shells are strung on an elastic cord, creating a beachy accessory that goes with everything. Each bracelet is unique.",
+    material: "Natural shells, elastic cord",
+    dimensions: "Stretches to fit most wrists (approx. 7 inches)",
+    weight: "15 g",
+    careInstructions: "Avoid water and chemicals; wipe dry after wearing",
+    origin: "Chonburi",
+    artisan: "Chonburi Shell Crafters",
+    culturalStory: "Shell collecting and crafting is a beloved tradition along Chonburi's coast, turning the ocean's treasures into wearable art."
   }
 ];
