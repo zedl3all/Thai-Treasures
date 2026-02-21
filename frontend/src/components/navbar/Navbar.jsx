@@ -19,7 +19,8 @@ import SearchFilterMobile from './SearchFilterMobile';
 
 function Navbar() {
     const navigate = useNavigate();
-    const badgeCount = useCartStore((state) => state.cartCount);
+    const items = useCartStore((state) => state.items);
+    const badgeCount = items.reduce((sum, item) => sum + item.quantity, 0);
     const [province, setProvince] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     const [mobileOpen, setMobileOpen] = useState(false);
