@@ -5,52 +5,70 @@ import {
     Box,
     Typography,
     Chip,
-    IconButton
-} from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
+    IconButton,
+} from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useNavigate } from 'react-router-dom';
+import { useCartStore } from '../middlewares/cartStore';
 
 export default function ProductCard({
+    id,
     image,
-    category = "None",
-    location = "None",
-    title = "None",
+    category = 'None',
+    location = 'None',
+    title = 'None',
     rating = 0,
     reviews = 0,
-    price = 0
+    price = 0,
 }) {
+    const navigate = useNavigate();
+    const addToCart = useCartStore((state) => state.addToCart);
+
+    const handleCardClick = () => {
+        navigate(`/product/${id}`);
+    };
+
+    const handleAddToCart = (e) => {
+        e.stopPropagation(); // prevent card click
+        addToCart(id);
+    };
+
     return (
         <Card
+            onClick={handleCardClick}
             sx={{
-                width: { xs: "100%", sm: 320, md: 320 },
+                width: { xs: '100%', sm: 320, md: 320 },
                 borderRadius: 4,
-                overflow: "hidden",
-                bgcolor: "#111",
-                color: "#fff",
-                position: "relative",
-                boxShadow: "0 4px 24px 0 rgba(255,138,101,0.08)",
-                border: "1.5px solid #232323",
-                transition: "box-shadow 0.2s, border 0.2s",
-                "&:hover": {
-                    boxShadow: "0 8px 32px 0 rgba(255,138,101,0.18)",
-                    border: "1.5px solid #FF8A65",
-                }
+                overflow: 'hidden',
+                bgcolor: '#111',
+                color: '#fff',
+                position: 'relative',
+                boxShadow: '0 4px 24px 0 rgba(255,138,101,0.08)',
+                border: '1.5px solid #232323',
+                transition: 'box-shadow 0.2s, border 0.2s, transform 0.2s',
+                cursor: 'pointer',
+                '&:hover': {
+                    boxShadow: '0 8px 32px 0 rgba(255,138,101,0.18)',
+                    border: '1.5px solid #FF8A65',
+                    transform: 'translateY(-4px)',
+                },
             }}
         >
             {/* Image Section */}
-            <Box sx={{ position: "relative" }}>
+            <Box sx={{ position: 'relative' }}>
                 <CardMedia
                     component="img"
-                    height={ { xs: 180, sm: 220, md: 260, lg: 325 } }
+                    height={{ xs: 180, sm: 220, md: 260, lg: 325 }}
                     image={image}
                     alt={title}
                     sx={{
-                        objectFit: "cover",
-                        width: "100%",
+                        objectFit: 'cover',
+                        width: '100%',
                         height: { xs: 180, sm: 220, md: 260, lg: 325 },
-                        transition: "filter 0.2s",
-                        filter: "brightness(0.97)",
+                        transition: 'filter 0.2s',
+                        filter: 'brightness(0.97)',
                     }}
                 />
 
@@ -58,15 +76,15 @@ export default function ProductCard({
                 <Chip
                     label={category}
                     sx={{
-                        position: "absolute",
+                        position: 'absolute',
                         top: { xs: 10, sm: 16 },
                         right: { xs: 10, sm: 16 },
-                        bgcolor: "#8D6E1E",
-                        color: "#fff",
+                        bgcolor: '#8D6E1E',
+                        color: '#fff',
                         fontWeight: 600,
                         fontSize: { xs: 11, sm: 13 },
                         px: { xs: 1, sm: 2 },
-                        boxShadow: "0 2px 8px 0 rgba(141,110,30,0.13)"
+                        boxShadow: '0 2px 8px 0 rgba(141,110,30,0.13)',
                     }}
                 />
 
@@ -75,61 +93,71 @@ export default function ProductCard({
                     icon={<LocationOnIcon sx={{ fontSize: 18 }} />}
                     label={location}
                     sx={{
-                        position: "absolute",
+                        position: 'absolute',
                         bottom: { xs: 10, sm: 16 },
                         left: { xs: 10, sm: 16 },
-                        bgcolor: "rgba(0,0,0,0.7)",
-                        color: "#FFAB91",
+                        bgcolor: 'rgba(0,0,0,0.7)',
+                        color: '#FFAB91',
                         fontSize: { xs: 11, sm: 13 },
                         px: { xs: 1, sm: 2 },
-                        boxShadow: "0 2px 8px 0 rgba(0,0,0,0.13)"
+                        boxShadow: '0 2px 8px 0 rgba(0,0,0,0.13)',
                     }}
                 />
             </Box>
 
             {/* Content */}
             <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
-                <Typography variant="h6" fontWeight={600} gutterBottom sx={{
-                    fontSize: { xs: 16, sm: 18 }
-                }}>
+                <Typography
+                    variant="h6"
+                    fontWeight={600}
+                    gutterBottom
+                    sx={{
+                        fontSize: { xs: 16, sm: 18 },
+                    }}
+                >
                     {title}
                 </Typography>
 
-                <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <StarIcon sx={{ color: "#FFD54F", fontSize: 20, mr: 0.5 }} />
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <StarIcon sx={{ color: '#FFD54F', fontSize: 20, mr: 0.5 }} />
                     <Typography variant="body1" sx={{ mr: 1, fontSize: { xs: 14, sm: 16 } }}>
                         {rating}
                     </Typography>
-                    <Typography variant="body2" color="gray" sx={{ fontSize: { xs: 12, sm: 14 } }}>
+                    <Typography
+                        variant="body2"
+                        color="gray"
+                        sx={{ fontSize: { xs: 12, sm: 14 } }}
+                    >
                         • {reviews} reviews
                     </Typography>
                 </Box>
 
                 <Box
                     sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center"
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
                     }}
                 >
                     <Typography
                         variant="h5"
                         sx={{
-                            color: "#FF8A65",
+                            color: '#FF8A65',
                             fontWeight: 700,
-                            fontSize: { xs: 18, sm: 22 }
+                            fontSize: { xs: 18, sm: 22 },
                         }}
                     >
                         ฿{price.toLocaleString()}
                     </Typography>
 
                     <IconButton
+                        onClick={handleAddToCart}
                         sx={{
-                            bgcolor: "#A0522D",
+                            bgcolor: '#A0522D',
                             borderRadius: '10px',
-                            color: "#fff",
-                            "&:hover": { bgcolor: "#8B4513" },
-                            boxShadow: "0 2px 8px 0 rgba(160,82,45,0.13)"
+                            color: '#fff',
+                            '&:hover': { bgcolor: '#8B4513' },
+                            boxShadow: '0 2px 8px 0 rgba(160,82,45,0.13)',
                         }}
                     >
                         <ShoppingCartOutlinedIcon />
