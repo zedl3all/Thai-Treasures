@@ -167,6 +167,7 @@ function ProductContainer() {
                                     }}
                                 >
                                     <ProductCard
+                                        id={p.id}
                                         image={p.image}
                                         category={p.category}
                                         location={p.province}
