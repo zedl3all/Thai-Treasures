@@ -8,7 +8,8 @@ function NavbarSearchMobile({
     onProvinceChange,
     searchTerm,
     onSearchChange,
-    handleSearchSubmit
+    handleSearchSubmit,
+    displayDropdown
 }) {
 
     return (
@@ -25,6 +26,7 @@ function NavbarSearchMobile({
             <NavbarDropdown
                 province={province}
                 handleProvinceChange={onProvinceChange}
+                display={displayDropdown}
             />
             
             <form onSubmit={handleSearchSubmit}

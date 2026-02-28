@@ -22,6 +22,7 @@ export default function ProductCard({
     rating = 0,
     reviews = 0,
     price = 0,
+    cardwidth = 320
 }) {
     const navigate = useNavigate();
     const addToCart = useCartStore((state) => state.addToCart);
@@ -39,7 +40,7 @@ export default function ProductCard({
         <Card
             onClick={handleCardClick}
             sx={{
-                width: { xs: '100%', sm: 320, md: 320 },
+                width: cardwidth,
                 borderRadius: 4,
                 overflow: 'hidden',
                 bgcolor: '#111',

@@ -16,6 +16,7 @@ function NavbarDrawer({
     badgeCount,
     province,
     onProvinceChange,
+    displayDropdown
 }) {
     const navigate = useNavigate()
 
@@ -69,7 +70,7 @@ function NavbarDrawer({
                 </ListItem>
 
                 <ListItem button onClick={() => {
-                    navigate('/products');
+                    navigate('/allproduct');
                     onClose();
                 }}>
                     <ListItemText primary="All Products" />
@@ -93,8 +94,16 @@ function NavbarDrawer({
             <Divider sx={{ borderColor: '#3b4043' }} />
 
             {/* Province Filter */}
-            <Box sx={{ p: 2 }}>
-                <Typography sx={{ mb: 1, color: '#b1aaa0' }}>
+            <Box
+                sx={{
+                    p: 2,
+                }}>
+                <Typography
+                    sx={{
+                        mb: 1,
+                        color: '#b1aaa0',
+                        display: displayDropdown
+                    }}>
                     Filter by Province
                 </Typography>
 
@@ -105,6 +114,7 @@ function NavbarDrawer({
                     <NavbarDropdown
                         province={province}
                         handleProvinceChange={onProvinceChange}
+                        display={displayDropdown}
                     />
                 </Box>
             </Box>

@@ -9,7 +9,8 @@ function SearchFilterDesktop({
     handleProvinceChange,
     searchTerm,
     handleSearchChange,
-    handleSearchSubmit
+    handleSearchSubmit,
+    displayDropdown
 }) {
     return (
         <Box
@@ -27,6 +28,7 @@ function SearchFilterDesktop({
             <NavbarDropdown
                 province={province}
                 handleProvinceChange={handleProvinceChange}
+                display={displayDropdown}
             />
 
             <form onSubmit={handleSearchSubmit}

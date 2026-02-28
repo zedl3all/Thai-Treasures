@@ -82,7 +82,7 @@ function FilterBar() {
                                 variant={active === p.value ? "contained" : "outlined"}
                                 onClick={() => {
                                     setActive(p.value)
-                                    navigate(`/?province=${encodeURIComponent(p.value)}`);
+                                    navigate(`/?provinces=${encodeURIComponent(p.value)}`);
                                 }}
                                 sx={{
                                     borderColor: active === p.value ? '#974D2A' : '#3B4043',

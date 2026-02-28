@@ -17,7 +17,9 @@ import NavbarDrawer from './NavbarDrawer';
 import SearchFilterDesktop from './SearchFilterDesktop';
 import SearchFilterMobile from './SearchFilterMobile';
 
-function Navbar() {
+function Navbar({
+    displayDropdown = 'inline-flex'
+}) {
     const navigate = useNavigate();
     const items = useCartStore((state) => state.items);
     const badgeCount = items.reduce((sum, item) => sum + item.quantity, 0);
@@ -31,8 +33,11 @@ function Navbar() {
 
         setProvince(selectedProvince);
 
-        if (selectedProvince.trim()) {
-            navigate(`/allproduct?province=${encodeURIComponent(selectedProvince)}`);
+        if(selectedProvince.trim() === 'AllProvinces'){
+            navigate(`/allproduct`);
+        }
+        else if (selectedProvince.trim()) {
+            navigate(`/allproduct?provinces=${encodeURIComponent(selectedProvince)}`);
         }
     };
 
@@ -169,6 +174,7 @@ function Navbar() {
                         searchTerm={searchTerm}
                         handleSearchChange={handleSearchChange}
                         handleSearchSubmit={handleSearchSubmit}
+                        displayDropdown = {displayDropdown}
                     />
 
                     {/* Mobile Search Button */}
@@ -229,6 +235,7 @@ function Navbar() {
                         searchTerm={searchTerm}
                         onSearchChange={handleSearchChange}
                         handleSearchSubmit={handleSearchSubmit}
+                        displayDropdown={displayDropdown}
                     />
                 )}
             </AppBar>
@@ -240,6 +247,7 @@ function Navbar() {
                 badgeCount={badgeCount}
                 province={province}
                 onProvinceChange={handleProvinceChange}
+                displayDropdown={displayDropdown}
             />
         </>
     );

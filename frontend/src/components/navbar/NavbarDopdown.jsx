@@ -7,7 +7,8 @@ import { PROVINCES } from '../provinces'
 
 function NavbarDropdown({
     province,
-    handleProvinceChange
+    handleProvinceChange,
+    display
 }) {
 
     const menuItemSx = {
@@ -27,6 +28,7 @@ function NavbarDropdown({
             sx={{
                 width: { md: '140px', lg: '210px' },
                 height: '44px',
+                display: display,
                 '& .MuiOutlinedInput-root': {
                     backgroundColor: '#181a1b',
                     color: 'white',

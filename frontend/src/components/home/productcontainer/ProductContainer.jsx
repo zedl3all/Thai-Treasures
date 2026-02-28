@@ -56,9 +56,12 @@ function ProductContainer() {
         <Box sx={{
             background: "linear-gradient(180deg, #181A1B 80%, #222 100%)",
             minHeight: "100vh",
-            py: { xs: 2, sm: 4, md: 6 }
+            py: { xs: 2, sm: 4, md: 6 },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
         }}>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{ width: "100%" }}>
                 <Box
                     sx={{
                         py: { xs: 1, sm: 2 },
@@ -67,7 +70,8 @@ function ProductContainer() {
                         alignItems: { xs: "flex-start", sm: "center" },
                         flexDirection: { xs: "column", sm: "row" },
                         flexWrap: "wrap",
-                        gap: 2
+                        gap: 2,
+                        mb: { xs: 2, sm: 3, md: 4 }
                     }}
                 >
                     <Box>
@@ -135,12 +139,13 @@ function ProductContainer() {
                     </FormControl>
                 </Box>
 
-                <Box sx={{ mt: { xs: 1, sm: 2 } }}>
+                <Box sx={{ mt: { xs: 1, sm: 2 }, display: "flex", justifyContent: "center" }}>
                     <Grid
                         container
                         spacing={{ xs: 2, sm: 3, md: 4 }}
                         sx={{
-                            justifyContent: { xs: 'center', md: 'flex-start' },
+                            justifyContent: "center",
+                            maxWidth: "100%"
                         }}
                     >
                         {sortedProducts.map((p) => (
@@ -154,6 +159,7 @@ function ProductContainer() {
                                 xl={2.4}
                                 sx={{
                                     display: "flex",
+                                    justifyContent: "center"
                                 }}
                             >
                                 <Box
