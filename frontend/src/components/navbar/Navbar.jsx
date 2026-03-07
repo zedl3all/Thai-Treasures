@@ -17,6 +17,35 @@ import NavbarDrawer from './NavbarDrawer';
 import SearchFilterDesktop from './SearchFilterDesktop';
 import SearchFilterMobile from './SearchFilterMobile';
 
+// ── Validation helpers ──────────────────────────────────────────────────────
+
+/** รายชื่อ province ที่ถูกต้อง (ควร import จาก provinces.js จริงๆ แต่ไว้ fallback) */
+import { PROVINCES } from '../../components/provinces';
+
+const VALID_PROVINCE_VALUES = new Set(PROVINCES.map((p) => p.value));
+
+const SEARCH_MAX_LENGTH = 100;
+
+// Allow: ตัวอักษร (รวม Thai), ตัวเลข, space, ขีด, และ & เท่านั้น
+const INVALID_CHARS = /[^a-zA-Z0-9ก-๙\s\-&]/;
+
+/**
+ * ตรวจสอบ search query — ถ้ามี characters ต้องห้ามให้ alert แจ้ง user
+ * คืนค่า null ถ้าไม่ผ่าน validation
+ */
+const sanitizeSearchQuery = (raw) => {
+    const trimmed = raw.trim().slice(0, SEARCH_MAX_LENGTH);
+
+    if (INVALID_CHARS.test(trimmed)) {
+        alert('กรุณาใช้เฉพาะตัวอักษรไทย/อังกฤษ ตัวเลข ช่องว่าง เครื่องหมาย - และ & เท่านั้น');
+        return null;
+    }
+
+    return trimmed;
+};
+
+// ───────────────────────────────────────────────────────────────────────────
+
 function Navbar({
     displayDropdown = 'inline-flex'
 }) {
@@ -28,34 +57,51 @@ function Navbar({
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMobileSearch, setShowMobileSearch] = useState(false);
 
+    // ── handlers ───────────────────────────────────────────────────────────
+
     const handleProvinceChange = (event) => {
         const selectedProvince = event.target.value;
 
+        // Validate: ต้องอยู่ใน whitelist หรือเป็น 'AllProvinces'
+        if (selectedProvince !== 'AllProvinces' && !VALID_PROVINCE_VALUES.has(selectedProvince)) {
+            console.warn(`[Navbar] Invalid province value: "${selectedProvince}"`);
+            return; // ไม่ navigate ถ้าค่าไม่ถูกต้อง
+        }
+
         setProvince(selectedProvince);
 
-        if(selectedProvince.trim() === 'AllProvinces'){
+        if (selectedProvince.trim() === 'AllProvinces') {
             navigate(`/allproduct`);
-        }
-        else if (selectedProvince.trim()) {
+        } else if (selectedProvince.trim()) {
             navigate(`/allproduct?provinces=${encodeURIComponent(selectedProvince)}`);
         }
     };
 
     const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
+        const raw = event.target.value;
+
+        // จำกัดความยาวใน state ด้วย (ป้องกัน input ที่ยาวเกิน)
+        if (raw.length <= SEARCH_MAX_LENGTH) {
+            setSearchTerm(raw);
+        }
     };
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        const query = searchTerm.trim();
-        if (query) {
-            navigate(`/allproduct?search=${encodeURIComponent(query)}`);
-        }
-    }
+
+        const query = sanitizeSearchQuery(searchTerm);
+
+        // Validate: ต้องมีค่าหลัง sanitize และผ่าน validation
+        if (!query) return;
+
+        navigate(`/allproduct?search=${encodeURIComponent(query)}`);
+    };
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    // ── render ─────────────────────────────────────────────────────────────
 
     return (
         <>
@@ -174,7 +220,7 @@ function Navbar({
                         searchTerm={searchTerm}
                         handleSearchChange={handleSearchChange}
                         handleSearchSubmit={handleSearchSubmit}
-                        displayDropdown = {displayDropdown}
+                        displayDropdown={displayDropdown}
                     />
 
                     {/* Mobile Search Button */}

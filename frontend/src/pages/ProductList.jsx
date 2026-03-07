@@ -16,42 +16,107 @@ import ProductFilterSidebar from '../components/ProductFilterSidebar';
 import { PRODUCTS } from "../components/product";
 import { PROVINCES } from "../components/provinces";
 
+// ── Validation helpers ──────────────────────────────────────────────────────
+
+const VALID_SORT_VALUES = new Set(['featured', 'priceLow', 'priceHigh', 'rating', 'newest']);
+const VALID_PROVINCE_VALUES = new Set(PROVINCES.map((p) => p.value));
+const SEARCH_MAX_LENGTH = 100;
+
+// Allow: ตัวอักษร (รวม Thai), ตัวเลข, space, ขีด, และ & เท่านั้น
+const INVALID_CHARS = /[^a-zA-Z0-9ก-๙\s\-&]/;
+
+/** Sanitize search query จาก URL param — ถ้ามี characters ต้องห้ามให้ alert */
+const sanitizeSearch = (raw) => {
+    if (!raw || typeof raw !== 'string') return '';
+    const trimmed = raw.trim().slice(0, SEARCH_MAX_LENGTH);
+
+    if (INVALID_CHARS.test(trimmed)) {
+        alert('กรุณาใช้เฉพาะตัวอักษรไทย/อังกฤษ ตัวเลข ช่องว่าง เครื่องหมาย - และ & เท่านั้น');
+        return '';
+    }
+
+    return trimmed;
+};
+
+/** Validate provinces จาก URL param */
+const parseProvincesParam = (raw) => {
+    if (!raw) return [];
+    if (raw === 'AllProvinces') return PROVINCES.map((p) => p.value);
+    return raw
+        .split(',')
+        .filter(Boolean)
+        .filter((v) => VALID_PROVINCE_VALUES.has(v)); // กรองเฉพาะค่าที่อยู่ใน whitelist
+};
+
+// ───────────────────────────────────────────────────────────────────────────
+
 function ProductList() {
     const [searchParams] = useSearchParams();
-    const province = searchParams.get("province");
+
+    // Validate province param (single, legacy)
+    const rawProvince = searchParams.get("province");
+    const province = rawProvince && VALID_PROVINCE_VALUES.has(rawProvince) ? rawProvince : null;
+
+    // Validate + sanitize search param
+    const searchQuery = sanitizeSearch(searchParams.get("search"));
 
     const [sortBy, setSortBy] = useState("featured");
-    const [selectedProvinces, setSelectedProvinces] = useState(() => {
-        const provinces = searchParams.get("provinces");
-        if (!provinces) return [];
-        if (provinces === "AllProvinces") return PROVINCES.map((p) => p.value);
-        return provinces.split(",").filter(Boolean);
-    });
+    const [selectedProvinces, setSelectedProvinces] = useState(() =>
+        parseProvincesParam(searchParams.get("provinces"))
+    );
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [priceRange, setPriceRange] = useState({ label: 'All Range', min: 0, max: Infinity });
     const [minRating, setMinRating] = useState(0);
 
     const handleSortChange = (event) => {
-        setSortBy(event.target.value);
+        const value = event.target.value;
+        // Validate: ต้องอยู่ใน whitelist เท่านั้น
+        if (VALID_SORT_VALUES.has(value)) {
+            setSortBy(value);
+        }
     };
 
     const filteredProducts = useMemo(() => {
         let products = PRODUCTS;
 
+        // Filter by province (legacy single param)
         if (province && province !== "AllProvinces") {
             products = products.filter((p) => p.province === province);
         }
+
+        // Filter by selected provinces (sidebar / multi)
         if (selectedProvinces.length > 0) {
             products = products.filter((p) => selectedProvinces.includes(p.province));
         }
+
+        // Filter by category
         if (selectedCategories.length > 0) {
             products = products.filter((p) => selectedCategories.includes(p.category));
         }
-        products = products.filter((p) => p.price >= priceRange.min && p.price <= priceRange.max);
+
+        // Filter by price range
+        products = products.filter(
+            (p) => p.price >= priceRange.min && p.price <= priceRange.max
+        );
+
+        // Filter by rating
         products = products.filter((p) => p.rating >= minRating);
 
+        // ── Search filter ──────────────────────────────────────────────────
+        if (searchQuery) {
+            const lower = searchQuery.toLowerCase();
+            products = products.filter(
+                (p) =>
+                    p.title?.toLowerCase().includes(lower) ||
+                    p.category?.toLowerCase().includes(lower) ||
+                    p.province?.toLowerCase().includes(lower) ||
+                    p.description?.toLowerCase().includes(lower)
+            );
+        }
+        // ──────────────────────────────────────────────────────────────────
+
         return products;
-    }, [province, selectedProvinces, selectedCategories, priceRange, minRating]);
+    }, [province, selectedProvinces, selectedCategories, priceRange, minRating, searchQuery]);
 
     const sortedProducts = useMemo(() => {
         const items = [...filteredProducts];
@@ -84,7 +149,7 @@ function ProductList() {
                         alignItems: "flex-start",
                     }}
                 >
-                    {/* ── Sidebar (desktop sticky / mobile FAB handled inside component) ── */}
+                    {/* ── Sidebar ── */}
                     <ProductFilterSidebar
                         selectedProvinces={selectedProvinces}
                         setSelectedProvinces={setSelectedProvinces}
@@ -113,7 +178,7 @@ function ProductList() {
                                 pb: { xs: 2, sm: 2.5 },
                             }}
                         >
-                            {/* Title + count */}
+                            {/* Title + count + search label */}
                             <Box>
                                 <Typography
                                     variant="h5"
@@ -125,7 +190,7 @@ function ProductList() {
                                         lineHeight: 1.2,
                                     }}
                                 >
-                                    All Products
+                                    {searchQuery ? `Results for "${searchQuery}"` : 'All Products'}
                                 </Typography>
                                 <Typography
                                     sx={{
@@ -223,7 +288,9 @@ function ProductList() {
                             >
                                 <Typography sx={{ fontSize: { xs: 40, md: 52 } }}>🔍</Typography>
                                 <Typography sx={{ color: '#9e9990', fontSize: { xs: 14, sm: 15 } }}>
-                                    No products match your filters
+                                    {searchQuery
+                                        ? `No products found for "${searchQuery}"`
+                                        : 'No products match your filters'}
                                 </Typography>
                             </Box>
                         )}
