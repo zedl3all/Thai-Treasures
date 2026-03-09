@@ -17,7 +17,7 @@ import { useSearchParams } from "react-router-dom";
 function ProductContainer() {
     const [sortBy, setSortBy] = useState("featured");
     const [searchParams] = useSearchParams();
-    const province = searchParams.get("province");
+    const province = searchParams.get("provinces");
 
     const filteredProducts = useMemo(() => {
         if (!province || province === "AllProvinces") {
