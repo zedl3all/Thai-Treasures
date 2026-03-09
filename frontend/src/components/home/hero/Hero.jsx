@@ -90,6 +90,7 @@ function Hero() {
                             },
                             transition: 'all 0.3s ease',
                         }}
+                        href='/allproduct'
                     >
                         Shop Now
                     </Button>
@@ -111,6 +112,7 @@ function Hero() {
                             },
                             transition: 'all 0.3s ease',
                         }}
+                        href='/allproduct'
                     >
                         Explore Provinces
                     </Button>
